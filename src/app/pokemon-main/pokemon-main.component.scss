@@ -1,0 +1,33 @@
+.cardHolder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokeCard {
+    width: fit-content;
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+.pokePic {
+    max-width: 300px;
+    background-color: rgb(240, 240, 240);
+}
+
+.pokeInfo {
+    padding: 20px;
+}
+
+.pokeName {
+    font-weight: bold;
+}
+
+.pokeId {
+    margin-top:10px;
+    font-weight: bold;
+}
+
+.pokeType {
+    margin-top:10px;
+    padding-inline-start: 20px;
+}
