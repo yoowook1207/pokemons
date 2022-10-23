@@ -1,0 +1,68 @@
+.cardHolder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.pokeCard {
+    width: fit-content;
+    border: 1px solid lightgray;
+    margin: 10px;
+}
+
+.pokePic {
+    width: 250px;
+    height: 250px;
+    background-color: rgb(240, 240, 240);
+
+}
+
+.pokeInfo {
+    padding: 20px;
+    height: 150px;
+}
+
+.pokeName {
+    font-weight: bold;
+}
+
+.pokeId {
+    margin-top:10px;
+    font-weight: bold;
+}
+
+.pokeType {
+    margin-top:10px;
+    padding-inline-start: 20px;
+}
+
+.modal {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+}
+
+.homeBtn {
+    position: absolute;
+    z-index: 1;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    color: white;
+    background-color: red;
+    border: none;
+}
+
+.homeBtn:hover {
+    background-color: rgb(255, 78, 78);
+    border: 1px solid black;
+}
+
+.homeBtn:active {
+    transform: translateY(2px);
+}
