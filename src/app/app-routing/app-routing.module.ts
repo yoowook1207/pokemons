@@ -7,6 +7,7 @@ import { PokemonMainComponent } from '../pokemon-main/pokemon-main.component';
 
 const routes: Routes = [
   {path: '', component: PokemonMainComponent},
+  // {path: 'anotherPage', component: },
 
 ]
 

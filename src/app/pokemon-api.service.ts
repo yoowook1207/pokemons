@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PokemonResponse } from './pokemon-response';
 
@@ -9,7 +10,13 @@ import { PokemonResponse } from './pokemon-response';
 export class PokemonApiService {
   private readonly pokemonApi = 'https://pokeapi.co/api/v2/pokemon/';
 
-  pokemonArr :any[] = []
+  selectedPoke: any[] = [];
+  private selectedPoke$ = new BehaviorSubject<any[]>(this.selectedPoke);
+  modalPoke = this.selectedPoke$.asObservable();
+
+  singleCardPokemon: string = '';
+
+  pokemonArr :any[] = [];
 
   constructor(private readonly http: HttpClient) {}
 
@@ -31,12 +38,15 @@ export class PokemonApiService {
     );
   };
 
-  getStarter = (pokemonArr: string[]) => {
-    pokemonArr.forEach(x =>{
-      return this.onePokemon(x).subscribe(x=>this.pokemonArr.push(x));
-    })
-  }
 
+  openModal = (pokemonName: string, pokemonSprite: string) => {
+    const selectedPokemon: any = {
+      name: pokemonName,
+      spriteUrl: pokemonSprite
+    }
+    this.selectedPoke[0] = selectedPokemon
+    this.selectedPoke$.next(this.selectedPoke);
+  }
 }
 
 export interface singlePokemon {

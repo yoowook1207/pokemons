@@ -8,6 +8,10 @@ import { PokemonApiService } from '../pokemon-api.service';
 })
 export class PokemonMainComponent implements OnInit {
 
+  selectedPokemonId!: number;
+
+  isModalShow:boolean = true;
+
   constructor(public pokemonService: PokemonApiService) { }
   starterPokemon = [ "Bulbasaur", "Squirtle", "Charmander" ]
   starterArr: any[] = []
@@ -19,6 +23,19 @@ export class PokemonMainComponent implements OnInit {
       return this.pokemonService.onePokemon(x).subscribe(x=>this.starterArr.push(x))
     })
     
+  }
+
+  onClickPokemon(pokemonName: string, pokemonSprite: string) {
+    this.pokemonService.openModal(pokemonName, pokemonSprite);
+    this.isModalShow = false;
+    // open-close modal css function
+  }
+
+  closeModal(e?:boolean) {
+    if(e) {
+      this.isModalShow = true;
+    }
+    this.isModalShow = true;
   }
 
 }

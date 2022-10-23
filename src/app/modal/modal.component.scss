@@ -1,0 +1,23 @@
+.modalContainer {
+    background-color: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background-color: white;
+    padding: 30px;
+}
+
+.modalPic {
+    display: block;
+    margin: 0 auto;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: space-evenly;
+}

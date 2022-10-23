@@ -1,6 +1,6 @@
 <div class="cardHolder">
-    <div class="pokeCard" *ngFor="let poke of starterArr">
-        <img class="pokePic" src={{poke.picture}} alt="bulbasaur">
+    <div class="pokeCard" *ngFor="let poke of starterArr" (click)="onClickPokemon(poke.name, poke.sprite)">
+        <img class="pokePic" src={{poke.picture}} alt={{poke.name}}>
         <div class="pokeInfo">
             <p class="pokeName">{{poke.name}}</p>
             <p class="pokeId">#{{poke.id}}</p>
@@ -12,3 +12,4 @@
         </div>
     </div>
 </div>
+<app-modal class="modal" [hidden]="isModalShow" (closing)="closeModal()"></app-modal>
