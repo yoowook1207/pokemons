@@ -22,6 +22,6 @@ export class ModalComponent implements OnInit {
   }
 
   movePage(pokemonName:string) {
-    this.pokemonService.singleCardPokemon = pokemonName
+    this.pokemonService.testingPoke = pokemonName
   }
 }

@@ -28,7 +28,6 @@ export class PokemonMainComponent implements OnInit {
   onClickPokemon(pokemonName: string, pokemonSprite: string) {
     this.pokemonService.openModal(pokemonName, pokemonSprite);
     this.isModalShow = false;
-    // open-close modal css function
   }
 
   closeModal(e?:boolean) {

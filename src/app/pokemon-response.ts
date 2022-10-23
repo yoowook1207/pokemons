@@ -48,7 +48,9 @@ export interface Sprite {
   front_shiny: string;
   front_shiny_female: string;
   other: {
-    dream_world: string;
+    dream_world: {
+      front_default: string;
+    }
     'official-artwork': {
       front_default: string;
     };

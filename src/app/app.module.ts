@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonMainComponent } from './pokemon-main/pokemon-main.component';
 import { ModalComponent } from './modal/modal.component';
+import { SingleCardComponent } from './single-card/single-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonMainComponent,
-    ModalComponent
+    ModalComponent,
+    SingleCardComponent
   ],
   imports: [
     BrowserModule,

@@ -10,13 +10,11 @@ import { PokemonResponse } from './pokemon-response';
 export class PokemonApiService {
   private readonly pokemonApi = 'https://pokeapi.co/api/v2/pokemon/';
 
+  testingPoke: string = '';
+
   selectedPoke: any[] = [];
   private selectedPoke$ = new BehaviorSubject<any[]>(this.selectedPoke);
   modalPoke = this.selectedPoke$.asObservable();
-
-  singleCardPokemon: string = '';
-
-  pokemonArr :any[] = [];
 
   constructor(private readonly http: HttpClient) {}
 
@@ -30,7 +28,7 @@ export class PokemonApiService {
           weight: poke.weight,
           height: poke.height,
           types: poke.types,
-          picture: poke.sprites.other['official-artwork'].front_default,
+          picture: poke.sprites.other.dream_world.front_default,
           sprite: poke.sprites.front_default
         };
         return pokemon;
@@ -47,6 +45,7 @@ export class PokemonApiService {
     this.selectedPoke[0] = selectedPokemon
     this.selectedPoke$.next(this.selectedPoke);
   }
+
 }
 
 export interface singlePokemon {
@@ -55,6 +54,6 @@ export interface singlePokemon {
   weight: number;
   height: number;
   types: object[];
-  picture?: string;
+  picture: string;
   sprite: string;
 }

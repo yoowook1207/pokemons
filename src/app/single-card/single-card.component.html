@@ -1,0 +1,16 @@
+<div class="cardHolder">
+    <div class="pokeCard" *ngFor="let poke of singlePoke" >
+        <img class="pokePic" src={{poke.picture}} alt={{poke.name}}>
+        <div class="pokeInfo">
+            <p class="pokeName">{{poke.name}}</p>
+            <p class="pokeId">#{{poke.id}}</p>
+            <ul class="pokeType" *ngFor="let type of poke.types">
+                <li>
+                    {{type.type.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<button routerLink="">Return to Home</button>
